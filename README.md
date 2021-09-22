@@ -1,5 +1,5 @@
 # Laravel Paginate Collection
 
-####Description:
+Description:
 
-######Allows laravel users to paginate a collection via a global helper method. Currently laravel only allows for native query builder pagination.
+Allows laravel users to paginate a collection via a global helper method. Currently laravel only allows for native query builder pagination.
