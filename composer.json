@@ -1,0 +1,26 @@
+{
+    "name": "sammyt/paginate-collection",
+    "description": "Allows laravel users to paginate a collection via a global helper method. Currently laravel only allows for native query builder pagination.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sammyt\\PaginateCollection\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "sammyt",
+            "email": "torressam333@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sammyt\\PaginateCollection\\PaginateCollectionServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
