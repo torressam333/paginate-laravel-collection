@@ -8,15 +8,21 @@ if (! function_exists('paginate_collection')) {
     /**
      * @param  $collection
      * @param  int  $perPage
-     * @param  null  $page
+     * @param int|null $currentPage
      * @param  array  $options
      * @return LengthAwarePaginator
      */
-    function paginate_collection($collection, int $perPage = 15, $page = null, array $options = []): LengthAwarePaginator
+    function paginate_collection($collection, int $perPage = 15, $currentPage = null, array $options = []): LengthAwarePaginator
     {
-        $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+        $currentPage = $currentPage ?: (Paginator::resolveCurrentPage() ?: 1);
         $collection = $collection instanceof Collection ? $collection : Collection::make($collection);
 
-        return new LengthAwarePaginator($collection->forPage($page, $perPage), $collection->count(), $perPage, $page, $options);
+        return new LengthAwarePaginator(
+            $collection->forPage($currentPage, $perPage),
+            $collection->count(),
+            $perPage,
+            $currentPage,
+            $options
+        );
     }
 }
