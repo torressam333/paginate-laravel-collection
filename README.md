@@ -29,7 +29,7 @@ Route::get('/users', function() {
        null
    );
    
-   dd($paginatedUsers);
+   dd($paginatedUsersCollection);
 });
 ```
 

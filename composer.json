@@ -6,7 +6,8 @@
     "autoload": {
         "psr-4": {
             "Sammyt\\PaginateCollection\\": "src/"
-        }
+        },
+        "files": ["src/paginate/PaginateCollectionHelper.php"]
     },
     "authors": [
         {
