@@ -14,8 +14,12 @@ In `MyProject`:
 
 1. Set up an `.env` file which connects to a local database.
 2. Run the out-of-the-box migrations making sure the `users` table is created.
-3. Use `tinker` to create some test users in the `users` table
-4. Create a route in `web.php` which has a callback `function` which will allow you to return a collection for testing
+3. Use `tinker` to create some test users in the `users` table or create them manually in your DB
+
+To test you can call this method globally and pass in your collection. Other parameters are optional.
+Below is an example use case of how to use the `paginate_collection` global helper method.
+
+Follow steps 1-3 above and then create a route in `web.php` which has a callback `function` which will allow you to return a collection for testing
 ```
 Route::get('/users', function() {
    $userCollection = User::all();
@@ -47,5 +51,5 @@ Illuminate\Pagination\LengthAwarePaginator {#251 ▼
 }
 ```
 
-As you can see it uses the `LengthAwarePaginator` behind the scenes
+As you can see it uses the `LengthAwarePaginator` behind the scenes and your collection is now paginated.
 
