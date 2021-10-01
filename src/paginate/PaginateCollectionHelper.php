@@ -6,17 +6,17 @@ use Illuminate\Support\Collection;
 
 if (! function_exists('paginate_collection')) {
     /**
-     * @param  $items
+     * @param  $collection
      * @param  int  $perPage
      * @param  null  $page
      * @param  array  $options
      * @return LengthAwarePaginator
      */
-    function paginate_collection($items, int $perPage = 15, $page = null, array $options = []): LengthAwarePaginator
+    function paginate_collection($collection, int $perPage = 15, $page = null, array $options = []): LengthAwarePaginator
     {
         $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
-        $items = $items instanceof Collection ? $items : Collection::make($items);
+        $collection = $collection instanceof Collection ? $collection : Collection::make($collection);
 
-        return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
+        return new LengthAwarePaginator($collection->forPage($page, $perPage), $collection->count(), $perPage, $page, $options);
     }
 }
